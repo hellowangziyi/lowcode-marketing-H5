@@ -1,10 +1,40 @@
 <template>
   <el-container>
+    <el-header height="80px" class="flex items-center shadow-md">
+      <!-- 顶部start -->
+      <Header></Header>
+      <!-- 顶部end -->
+    </el-header>
+    <el-container>
+      <el-aside>
+        <!-- 左侧组件start -->
+        <LeftAside></LeftAside>
+        <!-- 左侧组件end -->
+      </el-aside>
+      <el-main>
+        <!-- 中间模拟器start -->
+        <SimulatorEditor></SimulatorEditor>
+        <!-- 中间模拟器end -->
+        <!-- 右侧属性面板start -->
+        <RightAttributePanel></RightAttributePanel>
+        <!-- 右侧属性面板end -->
+      </el-main>
+    </el-container>
+  </el-container>
+  <!-- <section class="decoration-edit">
+    <section class="left">
+      <div class="group">
+        <draggable></draggable>
+      </div>
+    </section>
+  </section>
+  <el-container>
     <el-header>Header</el-header>
     <el-container>
       <el-aside></el-aside>
       <el-main>
         <div>{{ drag ? "拖拽中" : "拖拽停止" }}</div>
+        <el-button type="primary">Primary</el-button>
         <draggable
           v-model="myArray"
           group="people"
@@ -18,12 +48,16 @@
         </draggable>
       </el-main>
     </el-container>
-  </el-container>
+  </el-container> -->
 </template>
 
 <script lang="ts" setup>
 import { ref, reactive, defineComponent } from "vue";
 import draggable from "vuedraggable";
+import Header from "./components/header/index.vue";
+import LeftAside from "./components/left-aside/index.vue";
+import RightAttributePanel from "./components/right-attribute-panel/index.vue";
+import SimulatorEditor from "./components/simulator-editor/index.vue";
 
 let drag = ref(false);
 let myArray = reactive([
@@ -43,4 +77,13 @@ function onEnd() {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.el-header {
+  position: relative;
+  z-index: 99;
+  background-color: white;
+}
+
+.el-main {
+}
+</style>

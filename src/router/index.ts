@@ -26,3 +26,24 @@ router.afterEach(() => {
 });
 
 export default router;
+
+// 深拷贝
+function promiseAll(arry) {
+  return new Promise((resolve, reject) => {
+    if (Array.isArray(arry)) {
+      throw new TypeError("arg not a array！");
+    }
+    let count = 0;
+    const resolveArray = [];
+    const length = arry.length;
+    for (let i = 0; i < length; i++) {
+      Promise.resolve(arry[i]).then((val) => {
+        count++;
+        resolveArray.push(val);
+        if (count === length) {
+          return resolve(resolveArray);
+        }
+      }).catch(e=> reject(e));
+    }
+  });
+}
