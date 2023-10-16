@@ -7,7 +7,22 @@ import WindiCSS from "vite-plugin-windicss"; // windicss
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), AutoImport(), WindiCSS(), vueJsx()],
+  plugins: [
+    vue(),
+    WindiCSS(),
+    vueJsx(),
+    // https://github.com/antfu/unplugin-auto-import#readme
+    AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+      ],
+      dts: true,
+      imports: ["vue", "vue-router"],
+    }),
+  ],
   resolve: {
     alias: [
       {

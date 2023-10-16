@@ -1,4 +1,8 @@
-import { reactive } from "vue";
+/**------------------------------------------------------------------------
+ *                           ustTools
+ * 顶部栏的工具信息
+ *------------------------------------------------------------------------**/
+
 import {
   Upload,
   Download,
@@ -6,6 +10,7 @@ import {
   Position,
   ChatLineSquare,
 } from "@element-plus/icons-vue";
+
 export const useTools = () => {
   // const state = reactive({
   // coverRadio:'current',
