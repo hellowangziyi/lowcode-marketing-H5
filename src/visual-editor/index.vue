@@ -1,3 +1,12 @@
+<!--
+ * @Author: Everest
+ * @Date: 2023-10-02 20:53:13
+ * @LastEditors: Everest
+ * @LastEditTime: 2023-10-20 22:11:13
+ * @FilePath: /vite-demo/Users/wang/Documents/code/lowcode-marketing-H5/src/visual-editor/index.vue
+ * @Description: 
+ * 
+-->
 <template>
   <el-container>
     <el-header height="80px" class="flex items-center shadow-md">
@@ -5,8 +14,8 @@
       <Header></Header>
       <!-- 顶部end -->
     </el-header>
-    <el-container>
-      <el-aside>
+    <el-container class="layout-container">
+      <el-aside class="shadow-sm">
         <!-- 左侧组件start -->
         <LeftAside></LeftAside>
         <!-- 左侧组件end -->
@@ -85,5 +94,9 @@ function onEnd() {
 }
 
 .el-main {
+}
+
+.layout-container {
+  height: calc(100vh - 80px);
 }
 </style>

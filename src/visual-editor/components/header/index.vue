@@ -40,6 +40,10 @@
 import { VideoPlay } from "@element-plus/icons-vue";
 import { useTools } from "./useTools";
 
+defineOptions({
+  name: "PageHeader",
+});
+
 const tools = useTools();
 </script>
 
