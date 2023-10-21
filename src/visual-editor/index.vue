@@ -94,6 +94,9 @@ function onEnd() {
 }
 
 .el-main {
+  position: relative;
+  padding: 12px;
+  background-color: #f5f5f5;
 }
 
 .layout-container {
