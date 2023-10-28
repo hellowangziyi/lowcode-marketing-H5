@@ -55,7 +55,7 @@ export type VisualEditorSelectOptions = {
   [prop: string]: any; // 表示对象可以添加任意类型的任意属性
 }[];
 
-interface EditorSeletorProp {
+interface EditorSelectorProp {
   label: string;
   options: VisualEditorSelectOptions;
   defaultValue?: any;
@@ -69,7 +69,7 @@ export function createEditorSelectProp({
   defaultValue,
   tips,
   multiple,
-}: EditorSeletorProp): VisualEditorProps {
+}: EditorSelectorProp): VisualEditorProps {
   return {
     type: VisualEditorPropsType.select,
     label,
