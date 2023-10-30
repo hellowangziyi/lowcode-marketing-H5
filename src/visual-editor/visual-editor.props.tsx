@@ -102,3 +102,29 @@ export function createEditorInputProp({
     types,
   };
 }
+
+/* InputNumber */
+interface EditorInputNumberProp {
+  label: string;
+  defaultValue?: any;
+  tips?: string;
+  max?: number;
+  min?: number;
+}
+
+export function createEditorInputNumberProp({
+  label,
+  defaultValue,
+  max,
+  min,
+  tips,
+}: EditorInputNumberProp): VisualEditorProps {
+  return {
+    type: VisualEditorPropsType.inputNumber,
+    label,
+    tips,
+    max,
+    min,
+    defaultValue,
+  };
+}
